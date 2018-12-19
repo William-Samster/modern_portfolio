@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>JavaScript Basics</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/include.js"></script>
+</head>
+<body>
+  <header>
+   <nav code_block='navbar.html'>
+      <script>insertCodeBlock()</script>
+   </nav>
+   <div id="toc_badge">
+    <ol id="toc">
+      <h2>TOC</h2>
+      <li><a href="#pointers">Pointers</a></li>
+     <li><a href="#doc_attr">Document Properties</a></li>
+     <li><a href="#dom_examples">Working with the DOM</a></li>
+     <li><a href="#">placeholder</a></li>
+    </ol>
+   </div>
+  </header>
+  <main>
+   <div class="article" id="pointers">
+     <h2>Pointers</h2>
+    <ul>
+      <li>single selectors on many elements will grab the first item of the list/array</li>
+      <li>multiple selectors do not have to access the global scope, they can be applied <em>within</em> a single selection (i.e. as a method of the querySelector() result) </li>
+    </ul>
+   </div>
+   <div class="article" id="doc_attr">
+     <h2>Document Attributes</h2>
+    <ul>
+     <li>html-collections</li> an example would be <code>querySelector()</code>
+     html-collections are not exactly arrays, but do have indexes and allow mehtods such as <code>.length</code>. When an array method is needed (as with <code>.forEach()</code> or <code>.reverse()</code> simply turn the collection into array via the <code>Array.from('html_collection')</code>. A better alternative would be...
+     <li>node-lists</li> an example would be the value from <code>querySelectorAll()</code>
+     these return arrays, useful when needing array methods without converting
+    </ul>
+  </div>
+   <div class="article" id="selectors">
+     <h2>DOM selectors</h2>
+    <ul>
+     <li>single selectors</li>
+     <ol>
+       <li>getElementById</li>
+     </ol>
+     <li>multiple selectors</li>
+     <ol>
+       <li>getElementsByClassName()</li>
+       <li>getElementsByTagName()</li>
+     </ol>
+     <p>which can be accessed by its index [n]</p>
+     <p>and, </p>
+    </ul>
+   </div>
+   <div class="article" id="dom_examples">
+    <code>
+     <pre>
+        val = document;
+        val = document.all;
+        val = document.all[2]; //access the item via index
+        val = document.all.length; // of the entire list
+        val = document.head;
+        val = document.body;
+        val = document.doctype;
+        val = document.domain; // for the actual domain, in our case localhost 127...
+        val = document.URL; // domain with the protocol, port and file
+        val = document.characterSet; //i.e. UTF-8
+        val = document.contentType; //i.e. text/html
+        
+        val = document.forms;
+        val = document.forms[0];
+        val = document.forms[0].id;
+        val = document.forms[0].method; // get
+        val = document.forms[0].action; // returns the method if defined with action=""
+        
+        val = document.links;
+        val = document.links[0];
+        val = document.links[0].id; //if it has an id
+        val = document.links[0].className;
+        val = document.links[0].classList[0]; // returns a 'dom token list' of classes
+        
+        val = document.images;
+        
+        val = document.scripts;
+        val = document.scripts[2].getAttribute("src"); // returns the actual file
+        val = document.scripts[0].src; // will return the full path, protocol...
+     </pre>
+    </code>
+   </div>
+   <div class="article" id="event_changers">
+     <h2>Event Changers</h2>
+     <ul>
+       <li>Changing styling</li>
+       <li>Changing content</li>
+     </ul>
+     <p>When manipulating the document, several methods may be used with the 'getElementById()' selector. 
+       <ul>
+         <li><code>.textContent</code></li>
+         <li><code>.innerText</code></li>
+         <li><code>.innerHTML</code></li>
+         and a most popular with ES6 
+         <li><code>querySelector()</code></li>
+         which allows us to use simple css syntax including nested elements and <em>including pseudo classes!</em>
+      </ul>
+       However, almost always put the selector into a variable and apply the method on the variable name.
+    </p>
+   </div>
+   <div class="article" id=""></div>
+   <div class="article" id=""></div>
+  </main>
+  <script src="../js/sandbox.js"></script>
+ </body>
+</html>

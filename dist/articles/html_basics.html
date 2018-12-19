@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML Basics</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/include.js"></script>
+</head>
+<body>
+  <header>
+    <nav code_block='navbar.html'>
+        <script>insertCodeBlock()</script>
+    </nav>
+      <div id="toc_badge">
+          <ol id="toc">
+             <h2>TOC</h2>
+           <li><a href="#">Values</a></li>
+           <li><a href="#">Properties</a></li>
+           <li><a href="#">Box Model</a></li>
+           <li><a href="#margin_collapsing">margin collapsing</a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#grid">Grid</a></li>
+           <li><a href="#css_tutorials">Tutorials</a></li>
+          </ol>
+        </div>
+  </header>
+<p>Although affecting core CSS, <strong>"inline and block"</strong> are HTML-attributes.</p>
+<p>You can read a more detailed article on the difference between <strong>block-level</strong> and <strong>inline elements</strong>(which also includes a YouTube video about HTML at the top of the page)&nbsp;here:&nbsp;<a href="https://academind.com/learn/html/beginner-s-guide/diving-deeper-into-html#block-level-vs-inline-elements" rel="nofollow" target="_blank">https://academind.com/learn/html/beginner-s-guide/diving-deeper-into-html#block-level-vs-inline-elements</a></p>
+<h3><em>Here's the executive summary:</em></h3>
+<p><strong>Block-level elements</strong> are rendered as a block and hence take up all the available horizontal space. You can set margin-top and margin-bottom and two block-level elements will render in two different lines.</p>
+<p>Some examples are:&nbsp;<code>&lt;div&gt;</code>&nbsp;, <code>&lt;section&gt;</code>&nbsp;, <code>&lt;article&gt;</code>&nbsp;, <code>&lt;nav&gt;</code>&nbsp; but also <code>&lt;h1&gt;</code>&nbsp;, <code>&lt;h2&gt;</code>&nbsp; etc and <code>&lt;p&gt;</code>&nbsp;.</p>
+<p><strong>Inline elements&nbsp;</strong>on the other hand only take up the space they require to fit their content in. Hence two inline-elements will fit into the same line (as long as the combined content doesn't take up the entire space in which case a line break would be added).</p>
+<p>They also use the box-model you learned about but <code>margin-top</code>&nbsp; and <code>margin-bottom</code>&nbsp; have no effect on the element. <code>padding-top</code>&nbsp; and <code>padding-bottom</code>&nbsp; also have a different effect. They don't push the adjacent content away but they will do so with the element border. You can read more about that behavior in the following article:&nbsp;<a href="https://hacks.mozilla.org/2015/03/understanding-inline-box-model/" rel="nofollow" target="_blank">https://hacks.mozilla.org/2015/03/understanding-inline-box-model/</a></p>
+<p>Additionally, setting a <code>width</code>&nbsp; or <code>height</code>&nbsp; on an inline element also has no effect. The width and height is auto to take as much space as required by the content.</p>
+<p>Logically, this makes sense since you don't want your inline elements to destroy your multi-line text-layout. If you want to do so or need both block-level and inline behavior, you can set <code>display: inline-block</code>&nbsp; to merge behaviors.</p>
+<p>Some example elements are:&nbsp;<code>&lt;a&gt;</code>&nbsp;, <code>&lt;span&gt;</code>&nbsp;, <code>&lt;img&gt;</code>&nbsp;</p></div>
+<script src="../js/sandbox.js"></script>
+<footer code_block='footer.html'>
+  <script>insertCodeBlock()</script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CSS Basics</title>
+  <link rel="stylesheet" href="../css/style.css">
+ </head>
+ <body>
+   <header>
+      <nav>
+          <ul>
+            <li><a href="html_basics.html">HTML</a></li>
+            <li><a href="css_basics.html">CSS</a></li>
+            <li><a href="js_basics.html">JavaScript</a></li>
+          </ul>
+        </nav>
+     <div id="toc_badge">
+       <ol id="toc">
+          <h2>TOC</h2>
+        <li><a href="#">Values</a></li>
+        <li><a href="#">Properties</a></li>
+        <li><a href="#">Box Model</a></li>
+        <li><a href="#margin_collapsing">margin collapsing</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#grid">Grid</a></li>
+        <li><a href="#css_tutorials">Tutorials</a></li>
+       </ol>
+     </div>
+   </header>
+
+<ul><h2>Pointers</h2>
+      <li>to expand shorthand use browser dev tools</li>
+      <li>tricky height percentage attribute being that it is always relative to the parent container. Now, the parent container is set to a height of "whatever is necessary for the content". This renders the child's relative percentage meaningless.</li>
+      <li>block elements (many default html elements) take a full 100% width by default</li>
+      <li>as good practice, set global box-sizing to border box (of course this will not include margins)Now, as opposed to defining the outermost element, we should use the dreaded 'universal selector' best is to use the wildcard '*' (almost the single instance where this is recommended, being that defining it to the outermost element will not prevent the browser from overriding this box-sizing attribute for new block elements!</li>
+      <li>inline-block is most useful to preserve the block abilities</li>
+      <li>2 methods of hiding items: display:none and visibility:hidden, the difference is that with the latter, the item is still present, yet not visible, whereas the former removes it from the doc flow, accessible only with the DOM</li>
+    </ul>
+
+  <p id="values">
+    
+  </p>
+<p id="margin_collapsing">
+    <h5>Taken from the Udemy course, Section 3, Lecture 28</h5>
+    <h3>When working with margins, you can get unexpected results.</h3>
+    <ul>
+      <li>Why are two adjacent elements sharing one margin even though each element has its own one?&lt;&gt; 
+      <li>Why does a parent element (e.g. <code><section></code>  as in the videos) suddenly take on the margin of the child element (e.g. <code><h1></code> )?</li>
+    </ul>
+    <h2>A good <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">article</a>
+     on margin collapsing</h2>
+    
+    There, three base cases are described:
+    
+    Adjacent siblings which both have margins
+    A parent which holds one or more child elements where the first and/ or last (or the only) child has margins
+    An element without content, padding, border and height
+    <ol>Let's explore these cases:    
+    <li>Adjacent Siblings</li>
+    In this case, the first element might have a margin of 10px  (on all sides let's say) and the second one has 5px  (or 20px  - the values don't matter).
+    CSS will collapse the margins and only add the bigger one between the elements. So if we got margins of 10px  and 5px , a 10px  margin would be added between the elements?
+    <li>A parent with children that have a margin</li>
+    To be precise, the first and/ or last or the only child has to have margins (top and/ or bottom). In that case, the parent elements margin will collapse with the child element(s)' margins. Again, the bigger margin wins and will be applied to the parent element.
+    If the parent element has padding, inline content (other than the child elements) or a border, this behavior should not occur, the child margin will instead be added to the content of the wrapping parent element.
+    <li>An empty element with margins</li>    
+    This case probably doesn't occur that often but if you got an element with no content, no padding, no border and no height, then the top and bottom margin will be merged into one single margin. Again, the bigger one wins.
+  </ol>
+</p>
+<div id="grid">
+  <h2>CSS Grid</h2>
+  <ol>
+    <li><a href="#grid_terminology">terminology</a></li>
+    <li></li>
+    <li></li>
+  </ol>
+  <p id="grid_terminology">
+    <ul>
+      <li>cell/area/lines/(maybe span?)</li>
+      <li></li>
+      <li></li>
+    </ul>
+  </p>
+</div>
+<div id="css_tutorials">
+  <ul> <h3>Tutorials</h3>
+    <li><a href="https://youtu.be/Dz9BzY21Zks">playlist on css grid</a>(not recent)</li>
+  </ul>
+</div>
+<div style="display:inline-block; height:500px;">
+
+</div>
+<script src="../js/sandbox.js"></script>
+ </body>
+</html>
