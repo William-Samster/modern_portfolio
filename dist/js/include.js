@@ -10,14 +10,14 @@ function insertCodeBlock() {
    // Make an HTTP request w/ attribute value as file name:
    xhr = new XMLHttpRequest();
    xhr.onload = function() {
-    if (this.status == 200 && this.readyState == 4) {
+    if (this.status == 200) {
      elmnt.innerHTML = this.responseText;
     }
     // Remove the attribute, and call this function once more:
     elmnt.removeAttribute("code_block");
     insertCodeBlock();
    };
-   xhr.open("GET", `../include/${file}`, true);
+   xhr.open("GET", `C:/Users/bclsl/Dropbox/PROJECTS/myPortfolio/dist/templates/_include/${file}`, true);
    xhr.send();
    /* Exit the function: */
    return;
